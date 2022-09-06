@@ -10,26 +10,34 @@ public class PlayerMovement : MonoBehaviour
     private float runSpeed;
     [SerializeField]
     private float drag;
+    [SerializeField] [Range(1, 10)]
+    private float rotationSpeed;
 
-    Rigidbody rb;
-    Vector3 moveDir;
+    private Rigidbody rb;
+    private Vector3 moveDir;
+    private Quaternion rotToDir;
 
     // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rotToDir = transform.rotation;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         //TODO: player rotation:
+        if (moveDir != Vector3.zero) {
+            rotToDir = Quaternion.LookRotation(moveDir);
+        }
+        rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, rotToDir, Time.deltaTime * rotationSpeed);
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        rb.AddForce(moveDir.normalized * GetSpeed() * 10f);
+        rb.AddForce(moveDir.normalized * GetSpeed() * 500f * Time.deltaTime, ForceMode.Force);
     }
     private float GetSpeed() {
         return Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;

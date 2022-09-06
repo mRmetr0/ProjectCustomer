@@ -13,33 +13,49 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] [Range(1, 10)]
     private float rotationSpeed;
 
+    private float vInput;
+    private float hInput;
+
     private Rigidbody rb;
     private Vector3 moveDir;
     private Quaternion rotToDir;
+    private CameraController camOrientation;
 
-    // Start is called before the first frame update
     private void Awake()
     {
+        camOrientation = FindObjectOfType<CameraController>();
         rb = GetComponent<Rigidbody>();
+        rb.drag = drag;
         rotToDir = transform.rotation;
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-
-        //TODO: player rotation:
-        if (moveDir != Vector3.zero) {
-            rotToDir = Quaternion.LookRotation(moveDir);
-        }
-        rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, rotToDir, Time.deltaTime * rotationSpeed);
+        PlayerInput();
+        RotatePlayer();
     }
     private void FixedUpdate()
     {
         rb.AddForce(moveDir.normalized * GetSpeed() * 500f * Time.deltaTime, ForceMode.Force);
     }
+
     private float GetSpeed() {
         return Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+    }
+
+    private void RotatePlayer() {
+        if (moveDir != Vector3.zero) {
+            rotToDir = Quaternion.LookRotation(moveDir);
+        }
+        rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, rotToDir, Time.deltaTime * rotationSpeed);
+    }
+
+    private void PlayerInput () {
+        hInput = Input.GetAxisRaw("Horizontal");
+        vInput = Input.GetAxisRaw("Vertical");
+
+        //moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+
+        moveDir = camOrientation.transform.forward * vInput + camOrientation.transform.right * hInput;
     }
 }

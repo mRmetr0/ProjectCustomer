@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class MineScript : MonoBehaviour
 {
-    public enum miniGame {Random, Game1, Game2, Game3}
+    public enum MiniGame {Random, Game1, Game2, Game3}
     [SerializeField]
-    private miniGame minigame;
+    private MiniGame minigame;
     
     private void Start()
     {
-        Debug.Log(System.Enum.GetValues(typeof(miniGame)).Length);
-        if (minigame == miniGame.Random) {
-            minigame = (miniGame) Random.Range(1,System.Enum.GetValues(typeof(miniGame)).Length);
+        Debug.Log(System.Enum.GetValues(typeof(MiniGame)).Length);
+        if (minigame == MiniGame.Random) {
+            minigame = (MiniGame) Random.Range(1,System.Enum.GetValues(typeof(MiniGame)).Length);
         }
     }
 

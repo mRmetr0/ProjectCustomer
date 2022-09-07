@@ -20,9 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDir;
     private Quaternion rotToDir;
     private CameraController camOrientation;
+    private HUDManager HUD;
 
     private void Awake()
     {
+        HUD = FindObjectOfType<HUDManager>();
         camOrientation = FindObjectOfType<CameraController>();
         rb = GetComponent<Rigidbody>();
         rb.drag = drag;
@@ -57,5 +59,10 @@ public class PlayerMovement : MonoBehaviour
         //moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         moveDir = camOrientation.transform.forward * vInput + camOrientation.transform.right * hInput;
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        //TODO: make the minigame appear when the player touches a mine:
     }
 }

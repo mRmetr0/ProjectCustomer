@@ -1,16 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MineScript : MonoBehaviour
 {
     public enum MiniGame {Random, Game1, Game2, Game3}
     [SerializeField]
     private MiniGame minigame;
+    [SerializeField]
+    private float minDistance;
+    [SerializeField]
+    private float maxDistance;
+    private HUDManager HUD;
+
+    private PlayerMovement player;
+    private Vector3 distance;
+    private bool difused = false;
     
     private void Start()
     {
-        Debug.Log(System.Enum.GetValues(typeof(MiniGame)).Length);
+        HUD = FindObjectOfType<HUDManager>();
+        player = FindObjectOfType<PlayerMovement>();
+
         if (minigame == MiniGame.Random) {
             minigame = (MiniGame) Random.Range(1,System.Enum.GetValues(typeof(MiniGame)).Length);
         }
@@ -18,6 +30,18 @@ public class MineScript : MonoBehaviour
 
     private void Update()
     {
-        
+        distance = player.transform.position - transform.position;
+        if (distance.magnitude < minDistance) {
+            Debug.Log("Player Lost");        
+            Invoke(nameof (BackToTitle), 5f);    
+        } else if (distance.magnitude < maxDistance && Input.GetKeyDown(KeyCode.E) && !difused) {
+            difused = true;
+            Destroy(this);
+            HUD.GetGame(minigame);
+        }
+    }
+
+    private void BackToTitle () {
+        SceneManager.LoadScene(0);
     }
 }

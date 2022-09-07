@@ -6,12 +6,12 @@ public class HUDManager : MonoBehaviour
 {
     GameObject game1, game2, game3;
     PlayerMovement player;
-    CameraController camera;
+    CameraController cameraControl;
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
-        camera = FindObjectOfType<CameraController>();
+        cameraControl = FindObjectOfType<CameraController>();
 
         game1 = GameObject.FindWithTag("Game1");
         game1.SetActive(false);
@@ -25,7 +25,7 @@ public class HUDManager : MonoBehaviour
 
     public void GetGame (MineScript.MiniGame minigame) {
         player.enabled = false;
-        camera.enabled = false;
+        cameraControl.enabled = false;
 
         Cursor.lockState = CursorLockMode.None;
         switch (minigame) {
@@ -35,8 +35,10 @@ public class HUDManager : MonoBehaviour
         }
     }
     public void ResetGame (GameObject game) {
+        Cursor.lockState = CursorLockMode.Locked;
+
         player.enabled = true;
-        camera.enabled = true;
+        cameraControl.enabled = true;
 
         game.SetActive(false);
     }

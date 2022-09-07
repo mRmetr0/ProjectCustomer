@@ -5,7 +5,7 @@ using UnityEngine;
 public class RadarScript : MonoBehaviour
 {
     [SerializeField]
-    private float rotSpeed;
+    private MineScript mine;
     private PlayerMovement player;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,13 @@ public class RadarScript : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position;
-        transform.Rotate(0, rotSpeed, 0);
-
+        transform.LookAt(new Vector3(mine.transform.position.x, this.transform.localScale.y, mine.transform.position.z));
+        if (mine.GetDifused()) {
+            Destroy(gameObject);
+        }
+    }
+    public void SetTarget(MineScript setMine) {
+        this.transform.parent = null;
+        mine = setMine;
     }
 }

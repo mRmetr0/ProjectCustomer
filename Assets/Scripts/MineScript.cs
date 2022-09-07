@@ -18,7 +18,7 @@ public class MineScript : MonoBehaviour
     private Vector3 distance;
     private bool difused = false;
     
-    private void Start()
+    private void Awake()
     {
         HUD = FindObjectOfType<HUDManager>();
         player = FindObjectOfType<PlayerMovement>();
@@ -26,6 +26,11 @@ public class MineScript : MonoBehaviour
         if (minigame == MiniGame.Random) {
             minigame = (MiniGame) Random.Range(1,System.Enum.GetValues(typeof(MiniGame)).Length);
         }
+    }
+
+    void Start()
+    {
+        GameManager.instance.GetMinesList().Add(this);
     }
 
     private void Update()
@@ -43,5 +48,8 @@ public class MineScript : MonoBehaviour
 
     private void BackToTitle () {
         SceneManager.LoadScene(0);
+    }
+    public bool GetDifused () {
+        return difused;
     }
 }

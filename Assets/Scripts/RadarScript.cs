@@ -20,10 +20,7 @@ public class RadarScript : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
-        //pointer = FindObjectOfType<GameObject>();
         pRenderer = GetComponentInChildren<Renderer>();
-        //pMaterial = pointer.GetComponent<Renderer>().material;
-        //pRenderer.material.color = pMaterial.color;
     }
 
     // Update is called once per frame
@@ -33,7 +30,7 @@ public class RadarScript : MonoBehaviour
 
         mAlpha = alphaChangeMod/(transform.position - mine.transform.position).magnitude - alphaZeroRange;
         mAlpha = Mathf.Clamp(mAlpha, 0, 1); //Takes the distance between the player and designated mine, then devides it and clamps it between 0 and 1;
-        Debug.Log(this + ":"+mAlpha);
+        //Debug.Log(this + ":"+mAlpha);
 
         //Handles Alpha
         Color TextureColor = pRenderer.material.color;

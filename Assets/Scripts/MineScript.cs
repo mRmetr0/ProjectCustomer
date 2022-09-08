@@ -12,11 +12,13 @@ public class MineScript : MonoBehaviour
     private float minDistance;
     [SerializeField]
     private float maxDistance;
+    [SerializeField]
+    private GameObject Pole;
     private HUDManager HUD;
 
     private PlayerMovement player;
-    private Vector3 distance;
-    private bool lost, difused = false;
+    private Vector3 flatDistance;
+    private bool lost = false, difused = false;
     
     private void Awake()
     {
@@ -35,15 +37,17 @@ public class MineScript : MonoBehaviour
 
     private void Update()
     {
-        distance = player.transform.position - transform.position;
-        if (distance.magnitude < minDistance && !lost) {
+        flatDistance = new Vector3( player.transform.position.x - transform.position.x, 0,  player.transform.position.z - transform.position.z);
+        if (flatDistance.magnitude < minDistance && !lost) {
             lost = true;
             Debug.Log("Player Lost");        
-            Invoke(nameof (BackToTitle), 5f);    
-        } else if (distance.magnitude < maxDistance && Input.GetKeyDown(KeyCode.E) && !difused) {
+            Invoke(nameof (BackToTitle), 2f);    
+        } else if (flatDistance.magnitude < maxDistance && Input.GetKeyDown(KeyCode.E) && !difused && !lost) {
             difused = true;
+            Pole.transform.position = transform.position;
+            Instantiate(Pole);
             Destroy(this);
-            HUD.GetGame(minigame);
+            //HUD.GetGame(minigame);            //Scrapped for now
         }
     }
 

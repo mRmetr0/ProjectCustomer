@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Game1
+  - Pointer
+  - Timer
+  - HUD
   layers:
   - Default
   - TransparentFX

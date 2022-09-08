@@ -16,7 +16,7 @@ public class MineScript : MonoBehaviour
 
     private PlayerMovement player;
     private Vector3 distance;
-    private bool difused = false;
+    private bool lost, difused = false;
     
     private void Awake()
     {
@@ -36,7 +36,8 @@ public class MineScript : MonoBehaviour
     private void Update()
     {
         distance = player.transform.position - transform.position;
-        if (distance.magnitude < minDistance) {
+        if (distance.magnitude < minDistance && !lost) {
+            lost = true;
             Debug.Log("Player Lost");        
             Invoke(nameof (BackToTitle), 5f);    
         } else if (distance.magnitude < maxDistance && Input.GetKeyDown(KeyCode.E) && !difused) {

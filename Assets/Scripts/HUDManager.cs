@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class HUDManager : MonoBehaviour
 {
-    GameObject game1, game2, game3;
-    PlayerMovement player;
-    CameraController cameraControl;
-    // Start is called before the first frame update
-    void Start()
+    private GameObject game1, game2, game3;
+    private PlayerMovement player;
+    private CameraController cameraControl;
+    private void Start()
     {
+        //timerText = GetComponent<TextMeshProUGUI>();
         player = FindObjectOfType<PlayerMovement>();
         cameraControl = FindObjectOfType<CameraController>();
 
+        //
         game1 = GameObject.FindWithTag("Game1");
         game1.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
 
     public void GetGame (MineScript.MiniGame minigame) {

@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5842771336413542497
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -39,6 +52,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColor_1:
+        m_Texture: {fileID: 2800000, guid: d8b5507fe72ab4c49b1043e33e33b971, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColor_2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColor_4:
+        m_Texture: {fileID: 2800000, guid: 529510b7fb172224b8d2308671d7ac80, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -113,11 +138,51 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Normal_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_4:
+        m_Texture: {fileID: 2800000, guid: eac678c9c3bd67f459c2fba35db74fd4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ORM:
         m_Texture: {fileID: 2800000, guid: d8b5507fe72ab4c49b1043e33e33b971, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ORM_1:
+        m_Texture: {fileID: 2800000, guid: d8b5507fe72ab4c49b1043e33e33b971, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ORM_2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ORM_4:
+        m_Texture: {fileID: 2800000, guid: d8b5507fe72ab4c49b1043e33e33b971, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity_2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity_4:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -181,7 +246,19 @@ Material:
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
+    - _Alpha_Clip: 0
     - _Anisotropy: 0
+    - _BUILTIN_AlphaClip: 1
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 0
+    - _BUILTIN_DstBlend: 0
+    - _BUILTIN_QueueControl: -1
+    - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 1
+    - _BUILTIN_Surface: 0
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 1
+    - _BUILTIN_ZWriteControl: 0
     - _BlendMode: 0
     - _BumpScale: 1
     - _CoatMask: 0
@@ -228,6 +305,10 @@ Material:
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
+    - _Mat1_Tiling: 1
+    - _Mat2_Tiling: 1
+    - _Mat3_Tiling: 1
+    - _Mat4_Tiling: 1
     - _MaterialID: 1
     - _Metallic: 0
     - _MetallicRemapMax: 1
@@ -235,6 +316,10 @@ Material:
     - _Mode: 0
     - _NormalMapSpace: 0
     - _NormalScale: 1
+    - _Normal_Strenght_1: 0
+    - _Normal_Strenght_2: 0
+    - _Normal_Strenght_3: 0
+    - _Normal_Strenght_4: 0
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5

@@ -30,11 +30,6 @@ public class MineScript : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        GameManager.instance.GetMinesList().Add(this);
-    }
-
     private void Update()
     {
         flatDistance = new Vector3( player.transform.position.x - transform.position.x, 0,  player.transform.position.z - transform.position.z);

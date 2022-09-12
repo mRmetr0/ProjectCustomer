@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         set{difusedMines = value;}
     }
     public int allMines {
+        get{return maxMines;}
         set {maxMines = value;}
     }
     

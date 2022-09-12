@@ -6,7 +6,6 @@ public class MineManager : MonoBehaviour
 {
     [SerializeField]
     private RadarScript radarPrefab;
-    private List<MineScript> mines;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +16,7 @@ public class MineManager : MonoBehaviour
                 radar.SetTarget(mine);
             }
         }
-        //Destroy(gameObject);
+        GameManager.instance.allMines = transform.childCount;
+        enabled = false;
     }
 }

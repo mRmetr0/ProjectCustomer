@@ -3399,6 +3399,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5760487303849891140, guid: 8329d41eda24bf2439406d8b468131b9,
+        type: 3}
+      propertyPath: Pole
+      value: 
+      objectReference: {fileID: 5081892901049450996, guid: 5a0500486554a034c8863b96c19a938b,
+        type: 3}
+    - target: {fileID: 5760487303849891140, guid: 8329d41eda24bf2439406d8b468131b9,
+        type: 3}
+      propertyPath: flagAmout
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5760487303849891143, guid: 8329d41eda24bf2439406d8b468131b9,
         type: 3}
       propertyPath: m_Name

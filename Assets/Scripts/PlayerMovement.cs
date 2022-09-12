@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private float drag;
     [SerializeField] [Range(1, 10)]
     private float rotationSpeed;
+    [SerializeField]
+    private int flagAmout;
+    [SerializeField]
+    private GameObject Pole;
 
     private float vInput;
     private float hInput;
@@ -21,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private Quaternion rotToDir;
     private CameraController camOrientation;
     private HUDManager HUD;
+    public static event Action onMineCheck;
 
     private void Awake()
     {
@@ -35,6 +41,12 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerInput();
         RotatePlayer();
+        if (Input.GetKeyDown(KeyCode.E) && flagAmout>0) {
+            flagAmout--;
+            onMineCheck.Invoke();
+            Pole.transform.position = this.transform.position;
+            Instantiate(Pole);
+        }
     }
     private void FixedUpdate()
     {
@@ -59,10 +71,5 @@ public class PlayerMovement : MonoBehaviour
         //moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         moveDir = camOrientation.transform.forward * vInput + camOrientation.transform.right * hInput;
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        //TODO: make the minigame appear when the player touches a mine:
     }
 }

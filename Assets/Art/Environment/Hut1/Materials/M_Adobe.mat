@@ -24,7 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Adobe
-  m_Shader: {fileID: -6465566751694194690, guid: 4737dbee5ced22743920711e677be289,
+  m_Shader: {fileID: -6465566751694194690, guid: fd7816e3c61a2094bbaaf3275fb041a9,
     type: 3}
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT

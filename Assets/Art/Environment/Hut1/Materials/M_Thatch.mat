@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Thatch
-  m_Shader: {fileID: -6465566751694194690, guid: 4737dbee5ced22743920711e677be289,
+  m_Shader: {fileID: -6465566751694194690, guid: fd7816e3c61a2094bbaaf3275fb041a9,
     type: 3}
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -331,6 +331,10 @@ Material:
     - _Normal_Strenght_2: 0
     - _Normal_Strenght_3: 0
     - _Normal_Strenght_4: 0.5
+    - _Normal_strength: 1
+    - _Normal_strength_2: 1
+    - _Normal_strength_3: 1
+    - _Normal_strength_4: 1
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15

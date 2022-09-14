@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private int flagAmout;
     [SerializeField]
     private GameObject Pole;
+    [SerializeField]
+    private GameObject polePositionCube;
 
     private float vInput;
     private float hInput;
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && flagAmout>0) {
             flagAmout--;
             onMineCheck.Invoke();
-            Pole.transform.position = this.transform.position;
+            Pole.transform.position = polePositionCube.transform.position;
             Instantiate(Pole);
         }
     }

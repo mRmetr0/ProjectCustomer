@@ -8,6 +8,9 @@ public class MineScript : MonoBehaviour
     private float minDistance;
     [SerializeField]
     private float maxDistance;
+
+    private Vector3 minePosChange;
+
     private PlayerMovement player;
     private Vector3 flatDistance;
     private bool difused = false;
@@ -15,6 +18,7 @@ public class MineScript : MonoBehaviour
     private void Awake()
     {
         player = FindObjectOfType<PlayerMovement>();
+        minePosChange = new Vector3(0f, .1f, 0f);
     }
     void Start()
     {
@@ -30,6 +34,7 @@ public class MineScript : MonoBehaviour
             if (flatDistance.magnitude <= maxDistance) {
                 GameManager.instance.difused++;
                 difused = true;
+                this.transform.position -= minePosChange;
             }
         }
     }

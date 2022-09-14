@@ -37,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
         rotToDir = transform.rotation;
     }
 
+    // private void Start () {
+    //     Ray ray = new Ray(transform.position, Vector3.down);
+    //     if (Physics.Raycast(ray)) {
+    //         this.transform.position = ray.GetPoint();
+    //     }
+    // }
+
     private void Update()
     {
         PlayerInput();
@@ -51,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.AddForce(moveDir.normalized * GetSpeed() * 500f * Time.deltaTime, ForceMode.Force);
+        rb.AddForce(new Vector3(0, -10f, 0));
     }
 
     private float GetSpeed() {

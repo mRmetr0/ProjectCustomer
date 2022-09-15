@@ -19,6 +19,10 @@ public class HomeScreenButtonScript : MonoBehaviour
         Application.OpenURL("https://www.amnesty.org/en/what-we-do/arms-control/");
     }
     public void SettingButton () {
-        SceneManager.LoadScene("SettingsScene");
+        SceneManager.LoadScene(3);
+    }
+    public void BackButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }

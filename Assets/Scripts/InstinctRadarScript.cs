@@ -40,7 +40,7 @@ public class InstinctRadarScript : MonoBehaviour
 
         instinct.SetInt("spawn rate", (int)spawnRate);
         instinct.SetVector3("spawnVel", new Vector3(default, senseLength, default));
-        Debug.Log(instinct.GetVector3("spawnVel"));
+        //Debug.Log(instinct.GetVector3("spawnVel"));
 
         //Rotate towards mine:
         transform.LookAt(new Vector3(mine.transform.position.x, this.transform.position.y, mine.transform.position.z));

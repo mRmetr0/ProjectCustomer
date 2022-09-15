@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistance: 1.7
   difuseDistance: 7
+  mineManager: {fileID: 4107250971022459960, guid: 012c4cb81d46cdb4c85dd2989039e8d4,
+    type: 3}
 --- !u!1001 &3178579163502873076
 PrefabInstance:
   m_ObjectHideFlags: 0

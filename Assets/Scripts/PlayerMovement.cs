@@ -17,12 +17,15 @@ public class PlayerMovement : MonoBehaviour
     private int flagAmout;
     [SerializeField]
     private GameObject Pole;
+    [SerializeField]
+    private GameObject polePosition;
 
     private float vInput;
     private float hInput;
 
     private Rigidbody rb;
     private Vector3 moveDir;
+    private Vector3 poleOffset = new Vector3(0, 10, 0);
     private Quaternion rotToDir;
     private CameraController camOrientation;
     private HUDManager HUD;
@@ -51,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && flagAmout>0) {
             flagAmout--;
             onMineCheck.Invoke();
-            Pole.transform.position = this.transform.position;
+            Pole.transform.position = polePosition.transform.position + poleOffset;
             Instantiate(Pole);
         }
     }

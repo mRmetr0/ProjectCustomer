@@ -12,7 +12,7 @@ public class TerrainGenerator : MonoBehaviour
     private float offsetX =100f, offsetY = 100f;
 
     // Start is called before the first frame update
-    void Update()
+    void Awake()
     {
         if (offsetX<0) {offsetX = Random.Range(0, 999f);}
         if (offsetY<0) {offsetY = Random.Range(0, 999f);}

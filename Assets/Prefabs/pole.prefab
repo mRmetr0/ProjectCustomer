@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6863287752365370730}
   - component: {fileID: 8211358379267959187}
   - component: {fileID: 1330062958911850415}
-  - component: {fileID: -7890090954137061242}
+  - component: {fileID: -7766706142719751945}
   m_Layer: 0
   m_Name: pole
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56169767973844073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.93083, y: 15.703229, z: 48.007683}
+  m_LocalPosition: {x: 63.1575, y: 13.597517, z: 55.90327}
   m_LocalScale: {x: 0.18683, y: 0.8313188, z: 0.18683}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -100,22 +100,20 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: -0.95, z: -0.00000008940697}
---- !u!54 &-7890090954137061242
-Rigidbody:
+--- !u!114 &-7766706142719751945
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56169767973844073}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 90
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f38abfbe225db54dac5e0e279c77eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 2192149181123564719, guid: f32dbc38a99b57348903ea22266eba22, type: 3}
+  moveDown: {x: 0, y: 0, z: 0}
 --- !u!1 &517531456988866649
 GameObject:
   m_ObjectHideFlags: 0

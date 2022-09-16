@@ -37,6 +37,7 @@ public class MineScript : MonoBehaviour
             flatDistance = new Vector3( player.transform.position.x - transform.position.x, 0,  player.transform.position.z - transform.position.z);
             if (flatDistance.magnitude <= deathDistance) {      //Too far away to diffuse but still kills instinct:
                 GameManager.instance.GoToScene("EndScene");
+            }
             } else if (flatDistance.magnitude <= difuseDistance) {
                 handled = true;
             if (flatDistance.magnitude <= minDistance) {                                         //Too far away to diffuse but still kills instinct:

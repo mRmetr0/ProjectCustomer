@@ -10,13 +10,18 @@ public class MineScript : MonoBehaviour
     private float difuseDistance;
     [SerializeField][Tooltip("If player places flag in this radius, the mine goes off.")]
     private float deathDistance;
+    [SerializeField]
+    private float minDistance;
     
+
+    private Vector3 defusePos;
     private PlayerMovement player;
     private Vector3 flatDistance;
     private bool handled = false;
     
     private void Awake()
     {
+        defusePos = new Vector3(0f, .1f, 0f);
         player = FindObjectOfType<PlayerMovement>();
     }
     void Start()
@@ -34,6 +39,10 @@ public class MineScript : MonoBehaviour
                 GameManager.instance.GoToScene("EndScene");
             } else if (flatDistance.magnitude <= difuseDistance) {
                 handled = true;
+            if (flatDistance.magnitude <= minDistance) {                                         //Too far away to diffuse but still kills instinct:
+                handled = true;
+                this.transform.position -= defusePos;
+            } else if (flatDistance.magnitude <= difuseDistance) { //Close enough to diffuse the bomb:
                 GameManager.instance.difused++;
             } else if (flatDistance.magnitude <= maxDistance) { //Close enough to diffuse the bomb:
                 handled = true;

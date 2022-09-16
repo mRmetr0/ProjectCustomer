@@ -24,7 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Adobe
-  m_Shader: {fileID: -6465566751694194690, guid: 4737dbee5ced22743920711e677be289,
+  m_Shader: {fileID: -6465566751694194690, guid: fd7816e3c61a2094bbaaf3275fb041a9,
     type: 3}
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -320,9 +320,9 @@ Material:
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
     - _Mat1_Tiling: 1
-    - _Mat2_Tiling: 2
+    - _Mat2_Tiling: 1
     - _Mat3_Tiling: 1
-    - _Mat4_Tiling: 0.5
+    - _Mat4_Tiling: 5
     - _MaterialID: 1
     - _Metallic: 0
     - _MetallicRemapMax: 1
@@ -333,10 +333,10 @@ Material:
     - _Normal_Strenght_2: 0.00025
     - _Normal_Strenght_3: 1.26
     - _Normal_Strenght_4: 1
-    - _Normal_strength: 1
-    - _Normal_strength_2: 1
-    - _Normal_strength_3: 1.02
-    - _Normal_strength_4: 0.5
+    - _Normal_strength: 184.16
+    - _Normal_strength_2: 345.67
+    - _Normal_strength_3: 549.89
+    - _Normal_strength_4: 397.58
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15

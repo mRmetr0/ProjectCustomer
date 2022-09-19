@@ -16,9 +16,13 @@ public class HomeScreenButtonScript : MonoBehaviour
         Application.Quit();
     }
     public void CampaignButton () {
-        Application.OpenURL("https://www.amnesty.org/en/what-we-do/arms-control/");
+        Application.OpenURL("http://www.icbl.org/en-gb/home.aspx");
     }
     public void SettingButton () {
-        SceneManager.LoadScene("SettingsScene");
+        SceneManager.LoadScene(3);
+    }
+    public void BackButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }

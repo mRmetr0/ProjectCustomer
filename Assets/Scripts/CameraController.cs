@@ -17,13 +17,16 @@ public class CameraController : MonoBehaviour
     private Vector3 camDistance;
     private GameObject mainCam;
     private PlayerMovement player;
+    private GameObject yRotater;
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerMovement>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera");
         if (mainCam != null) {
-            mainCam.transform.parent = transform;
+            yRotater = new GameObject();
+            yRotater.transform.parent = transform;
+            mainCam.transform.parent = yRotater.transform;
             mainCam.transform.position = camDistance;
         } else {
             Debug.Log("Main Camera is missing, be sure to add one!");
@@ -40,10 +43,13 @@ public class CameraController : MonoBehaviour
         // X-axis look rotation:
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, CameraHighets, CameraLowest);
-        mainCam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        
+        //mainCam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);  // <-Works but could be better;
+        yRotater.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+
         //Y-axis look rotation:
-        transform.Rotate(Vector3.up * mouseX);
+        transform.Rotate(Vector3.up * mouseX); // <-Works but could be better;
+
+
     }
 
     private void MouseInputs() {

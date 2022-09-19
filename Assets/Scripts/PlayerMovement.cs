@@ -59,10 +59,15 @@ public class PlayerMovement : MonoBehaviour
         PlayerInput();
         RotatePlayer();
         FlagPlacement();
-        while(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
-            Debug.Log("play walk sound");
-            sounds.sfxClips[5].Play();
+            Debug.Log(sounds.sfxClips[4]);
+            sounds.sfxClips[4].Play();
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            Debug.Log(sounds.sfxClips[4] + "stop");
+            sounds.sfxClips[4].Stop();
         }
     }
     private void FixedUpdate()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using System;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private GameObject Pole;
     [SerializeField]
     private LayerMask mask;
+    [SerializeField]
+    private GameObject polePos;
+    [SerializeField]
+    SoundManager sounds;
+
     private float vInput;
     private float hInput;
 
@@ -53,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
         PlayerInput();
         RotatePlayer();
         FlagPlacement();
+        while(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("play walk sound");
+            sounds.sfxClips[5].Play();
+        }
     }
     private void FixedUpdate()
     {
@@ -65,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             flagAmout--;
             GameManager.instance.flags++;
             onMineCheck.Invoke();
-            Pole.transform.position = this.transform.position;
+            Pole.transform.position = polePos.transform.position + poleOffset;
             Instantiate(Pole);
         }
     }

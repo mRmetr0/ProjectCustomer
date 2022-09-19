@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] Slider sfxVolume;
     [Space]
     [SerializeField] AudioSource musicClip;
-    [SerializeField] List<AudioSource> sfxClips;
+    [SerializeField] public List<AudioSource> sfxClips;
 
     void Start()
     {

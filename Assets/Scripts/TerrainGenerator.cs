@@ -7,13 +7,15 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField]
     private int depth = 20, width = 256, height = 256;
     [SerializeField]
-    private float scale = 20f, offsetX =100f, offsetY = 100f;
+    private float scale = 20f;
+    [SerializeField][Tooltip("Random if the value is below 0.")]
+    private float offsetX =100f, offsetY = 100f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        offsetX = Random.Range(0, 999f);
-        offsetY = Random.Range(0, 999f);
+        if (offsetX<0) {offsetX = Random.Range(0, 999f);}
+        if (offsetY<0) {offsetY = Random.Range(0, 999f);}
 
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);

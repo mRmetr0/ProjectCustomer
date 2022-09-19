@@ -18,9 +18,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: 706
-    y: -363
+    y: -249
     width: 904
-    height: 1815
+    height: 1702
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -49,8 +49,8 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_UIInfos: {fileID: 114340500867371532}
   m_ParameterInfo:
-  - name: spawn rate
-    path: spawn rate
+  - name: spawnRate
+    path: spawnRate
     tooltip: 
     sheetType: m_Int
     realType: Int32
@@ -1846,7 +1846,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 50
+      m_SerializableObject: 60
     m_Space: 2147483647
   m_Property:
     name: distortionScale
@@ -2178,12 +2178,12 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661614716}
-  m_ExposedName: spawn rate
+  m_ExposedName: spawnRate
   m_Exposed: 1
   m_Order: 0
   m_Category: 
@@ -2204,7 +2204,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614716}
       inputSlot: {fileID: 8926484042661614557}
-    position: {x: 940.6667, y: -362.6667}
+    position: {x: 756, y: -158.66666}
     expandedSlots: []
     expanded: 1
 --- !u!114 &8926484042661614716
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:

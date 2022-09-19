@@ -18,8 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject Pole;
     [SerializeField]
-    private GameObject polePosition;
-
+    private LayerMask mask;
     private float vInput;
     private float hInput;
 
@@ -40,28 +39,35 @@ public class PlayerMovement : MonoBehaviour
         rotToDir = transform.rotation;
     }
 
-    // private void Start () {
-    //     Ray ray = new Ray(transform.position, Vector3.down);
-    //     if (Physics.Raycast(ray)) {
-    //         this.transform.position = ray.GetPoint();
-    //     }
-    // }
+    private void Start () {
+        //Make sure the player starts the game standing on the ground:
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, Mathf.Infinity, mask)) {
+            if (hit.collider != null) {
+                this.transform.position = new Vector3(transform.position.x, hit.point.y + (transform.localScale.y/2)+1, transform.position.z);
+            }
+        }
+    }
 
     private void Update()
     {
         PlayerInput();
         RotatePlayer();
-        if (Input.GetKeyDown(KeyCode.E) && flagAmout>0) {
-            flagAmout--;
-            onMineCheck.Invoke();
-            Pole.transform.position = polePosition.transform.position + poleOffset;
-            Instantiate(Pole);
-        }
+        FlagPlacement();
     }
     private void FixedUpdate()
     {
         rb.AddForce(moveDir.normalized * GetSpeed() * 500f * Time.deltaTime, ForceMode.Force);
-        rb.AddForce(new Vector3(0, -10f, 0));
+        rb.AddForce(new Vector3(0, -20f, 0));
+    }
+
+    private void FlagPlacement () {
+        if (Input.GetKeyDown(KeyCode.E) && flagAmout>0) {
+            flagAmout--;
+            GameManager.instance.flags++;
+            onMineCheck.Invoke();
+            Pole.transform.position = this.transform.position;
+            Instantiate(Pole);
+        }
     }
 
     private float GetSpeed() {
@@ -71,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     private void RotatePlayer() {
         if (moveDir != Vector3.zero) {
             rotToDir = Quaternion.LookRotation(moveDir);
+            //rotToDir = Quaternion.LookRotation(new Vector3(moveDir.x, 0, moveDir.z));
         }
         rb.transform.rotation = Quaternion.Slerp(rb.transform.rotation, rotToDir, Time.deltaTime * rotationSpeed);
     }

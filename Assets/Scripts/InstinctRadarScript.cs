@@ -38,9 +38,9 @@ public class InstinctRadarScript : MonoBehaviour
             senseLength = Mathf.Clamp(senseLength, lengthMin,lengthMax);
         }
 
-        instinct.SetInt("spawn rate", (int)spawnRate);
+        instinct.SetInt("spawnRate", (int)spawnRate);
         instinct.SetVector3("spawnVel", new Vector3(default, senseLength, default));
-        //Debug.Log(instinct.GetVector3("spawnVel"));
+        //Debug.Log("SR: "+(int)spawnRate+" SV: "+senseLength+" FD: "+flatDist.magnitude);
 
         //Rotate towards mine:
         transform.LookAt(new Vector3(mine.transform.position.x, this.transform.position.y, mine.transform.position.z));
@@ -50,5 +50,6 @@ public class InstinctRadarScript : MonoBehaviour
     }
     public void SetInstinctTarget(MineScript setMine) {
         mine = setMine;
+        tooCloseDist = mine.GetMaxDist();
     }
 }

@@ -48,12 +48,11 @@ MonoBehaviour:
   instinct: {fileID: 7806444859375305308}
   spawnMod: 30
   lengthMod: 20
-  spawnMax: 20
+  spawnMax: 25
   spawnMin: 1
   lengthMax: 1
   lengthMin: 0.2
-  tooCloseDist: 5
-  radarHeight: -0.3
+  radarHeight: 0.7
 --- !u!1 &5723789549273422306
 GameObject:
   m_ObjectHideFlags: 0

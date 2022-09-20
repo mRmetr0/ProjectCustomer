@@ -10,8 +10,6 @@ public class MineScript : MonoBehaviour
     private float difuseDistance;
     [SerializeField][Tooltip("If player places flag in this radius, the mine goes off.")]
     private float deathDistance;
-    [SerializeField]
-    private float minDistance;
     
 
     private Vector3 defusePos;

@@ -7,24 +7,40 @@ public class MoveFlag : MonoBehaviour
     [SerializeField] GameObject terrain;
 
     [SerializeField] Vector3 moveDown;
+
+    [SerializeField]
+    LayerMask mask;
     void Start()
     {
-        moveDown = new Vector3(0, .1f, 0);
+        if (moveDown.y <= 0) {moveDown = new Vector3(0, .1f, 0);}
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.transform.position -= moveDown;
-    }
-    public void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("collides");
-        moveDown = new Vector3(0, 0, 0);
-        if (terrain.gameObject.tag == "ground")
-        {
-            Debug.Log("stop");
-            moveDown = new Vector3(0, 0, 0);
+        if (!FallCheck()) {
+
+        this.transform.position -= moveDown * Time.deltaTime;
         }
+    }
+    // public void OnCollisionEnter(Collision other)
+    // {
+    //     Debug.Log("collides");
+    //     moveDown = new Vector3(0, 0, 0);
+    //     if (terrain.gameObject.tag == "ground")
+    //     {
+    //         Debug.Log("stop");
+    //         moveDown = new Vector3(0, 0, 0);
+    //     }
+    // }
+
+    bool FallCheck () {
+        if (Physics.Raycast(gameObject.transform.position, Vector3.down, 0.7f, mask)) {
+            Debug.Log("RayCast HIT!");
+            Destroy(this);
+            moveDown *= 0;
+            return true;
+        }
+        return false;
     }
 }

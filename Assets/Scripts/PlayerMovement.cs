@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             flagAmout--;
             GameManager.instance.flags++;
             onMineCheck.Invoke();
-            Pole.transform.position = this.transform.position;
+            Pole.transform.position = this.transform.position + new Vector3(0, 2, 0);
             Instantiate(Pole);
         }
     }

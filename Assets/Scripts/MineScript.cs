@@ -35,19 +35,16 @@ public class MineScript : MonoBehaviour
     void FlagableMine() {
         if (!handled) {
             flatDistance = new Vector3( player.transform.position.x - transform.position.x, 0,  player.transform.position.z - transform.position.z);
-            if (flatDistance.magnitude <= deathDistance) {      //Too far away to diffuse but still kills instinct:
+            if (flatDistance.magnitude <= deathDistance) {      //Puts flag on mine and detonates;
                 GameManager.instance.GoToScene("EndScene");
-            }
-            } else if (flatDistance.magnitude <= difuseDistance) {
+            } else if (flatDistance.magnitude <= difuseDistance) {  //Close enough to diffuse the bomb:
                 handled = true;
-            if (flatDistance.magnitude <= minDistance) {                                         //Too far away to diffuse but still kills instinct:
-                handled = true;
-                this.transform.position -= defusePos;
-            } else if (flatDistance.magnitude <= difuseDistance) { //Close enough to diffuse the bomb:
                 GameManager.instance.difused++;
-            } else if (flatDistance.magnitude <= maxDistance) { //Close enough to diffuse the bomb:
+                Debug.Log("diffused");
+            } else if (flatDistance.magnitude <= maxDistance) { //Too far away to diffuse but still kills instinct:
                 handled = true;
             }
+            
         }
     }
     public bool GetDifused () {

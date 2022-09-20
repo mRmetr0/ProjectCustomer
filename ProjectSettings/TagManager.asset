@@ -9,6 +9,7 @@ TagManager:
   - Timer
   - HUD
   - ground
+  - Grass
   layers:
   - Default
   - TransparentFX

@@ -57,7 +57,18 @@ public class SoundManager : MonoBehaviour
             for(int i = 0; i < sfxClips.Count; i++)
             {
                 AudioSource sfxClip = sfxClips[i];
-                sfxClip.volume = sfxVolume.value * masterVolume.value;
+                if(i != 0 && i != 1)
+                {
+                    sfxClip.volume = sfxVolume.value * masterVolume.value;
+                }
+                if(i == 0)
+                {
+                    sfxClips[0].volume *= masterVolume.value;
+                }
+                if (i == 1)
+                {
+                    sfxClips[1].volume *= masterVolume.value;
+                }
             }
         }
 

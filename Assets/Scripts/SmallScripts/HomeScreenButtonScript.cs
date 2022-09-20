@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class HomeScreenButtonScript : MonoBehaviour
+public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
     [SerializeField]
     private GameObject settingsOverlay;
+
+    private Button pb;
+    public Sprite newSprite;
+    public Sprite originalSprite;
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        pb = GetComponent<Button>();
     }
     public void StartButton () {
         SceneManager.LoadScene(1);
@@ -31,5 +38,15 @@ public class HomeScreenButtonScript : MonoBehaviour
     {
         settingsOverlay.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        pb.image.sprite = newSprite;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        pb.image.sprite = originalSprite;
     }
 }

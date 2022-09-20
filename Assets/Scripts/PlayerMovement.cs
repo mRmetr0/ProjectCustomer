@@ -59,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerInput();
         RotatePlayer();
         FlagPlacement();
+        RandomSound();
         if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
             Debug.Log(sounds.sfxClips[4]);
@@ -68,6 +69,20 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log(sounds.sfxClips[4] + "stop");
             sounds.sfxClips[4].Stop();
+        }
+    }
+    public void RandomSound()
+    {
+        int i = UnityEngine.Random.Range(0, 10000);
+        if(i <= 1)
+        {
+            sounds.sfxClips[0].Play();
+            Debug.Log(sounds.sfxClips[0]);
+        }
+        if(i >= 1 && i <= 5)
+        {
+            sounds.sfxClips[5].Play();
+            Debug.Log(sounds.sfxClips[5]);
         }
     }
     private void FixedUpdate()

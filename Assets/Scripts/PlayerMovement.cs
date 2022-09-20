@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using System;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     private GameObject Pole;
     [SerializeField]
     private LayerMask mask;
+    [SerializeField]
+    private GameObject polePos;
+    [SerializeField]
+    SoundManager sounds;
+
     private float vInput;
     private float hInput;
 
@@ -53,6 +59,16 @@ public class PlayerMovement : MonoBehaviour
         PlayerInput();
         RotatePlayer();
         FlagPlacement();
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log(sounds.sfxClips[4]);
+            sounds.sfxClips[4].Play();
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            Debug.Log(sounds.sfxClips[4] + "stop");
+            sounds.sfxClips[4].Stop();
+        }
     }
     private void FixedUpdate()
     {

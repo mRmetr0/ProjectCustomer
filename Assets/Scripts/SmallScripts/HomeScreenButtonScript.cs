@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class HomeScreenButtonScript : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject settingsOverlay;
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -24,5 +26,10 @@ public class HomeScreenButtonScript : MonoBehaviour
     public void BackButton()
     {
         SceneManager.LoadScene(0);
+    }
+    public void BackButtonInGame()
+    {
+        settingsOverlay.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

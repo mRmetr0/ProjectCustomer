@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class HUDManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class HUDManager : MonoBehaviour
     private float startTime;
     [SerializeField]
     private TextMeshProUGUI mainTextDisplay, subTextDisplay;
+    [SerializeField]
+    private GameObject settingsOverlay;
 
     void Start()
     {
@@ -25,6 +28,10 @@ public class HUDManager : MonoBehaviour
     private void Update()
     {
         HUDTimer();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            settingsOverlay.SetActive(true);
+        }
     }
     private void HUDTimer() {
         if (startTime > 0) {

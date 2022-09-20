@@ -31,6 +31,7 @@ public class HUDManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             settingsOverlay.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     private void HUDTimer() {

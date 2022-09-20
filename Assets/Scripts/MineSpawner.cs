@@ -7,7 +7,6 @@ public class MineSpawner : MonoBehaviour
     [SerializeField] private GameObject startPos;
     [SerializeField] private GameObject endPos;
     [SerializeField] private GameObject mine;
-    [SerializeField] private GameObject ground;
     [SerializeField] private GameObject mineManager;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private int maxMines;
@@ -32,7 +31,7 @@ public class MineSpawner : MonoBehaviour
                 Debug.Log("ray");
                 if (hit.collider.tag == "ground")
                     Debug.Log("spawn");
-                Instantiate(mine, hit.point, Quaternion.identity, mineManager.transform);
+                Instantiate(mine, hit.point - new Vector3(0, Random.Range(0.4f, 0.7f), 0), Quaternion.identity, mineManager.transform);
             }
         }
     }

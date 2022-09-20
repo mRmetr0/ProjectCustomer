@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2163.622, g: 2271.457, b: 3307.1992, a: 1}
+  m_IndirectSpecularColor: {r: 2159.1592, g: 2263.6074, b: 3287.3125, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 823110920}
   - component: {fileID: 823110919}
   - component: {fileID: 823110918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1709,8 +1709,8 @@ MonoBehaviour:
   width: 129
   height: 129
   scale: 7
-  offsetX: 100
-  offsetY: 100
+  offsetX: 0
+  offsetY: 0
 --- !u!114 &823110919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,11 +1726,10 @@ MonoBehaviour:
   startPos: {fileID: 1417553261}
   endPos: {fileID: 1836201650}
   mine: {fileID: 6957918023614393168, guid: 1fb288ac116094b438d560ddf5cb0de3, type: 3}
-  ground: {fileID: 0}
   mineManager: {fileID: 1320724135}
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   maxMines: 8
 --- !u!154 &823110920
 TerrainCollider:
@@ -5787,17 +5786,17 @@ PrefabInstance:
     - target: {fileID: 5760487303849891161, guid: 8329d41eda24bf2439406d8b468131b9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5760487303849891161, guid: 8329d41eda24bf2439406d8b468131b9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5760487303849891161, guid: 8329d41eda24bf2439406d8b468131b9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.48
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5760487303849891161, guid: 8329d41eda24bf2439406d8b468131b9,
         type: 3}

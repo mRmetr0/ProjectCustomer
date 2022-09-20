@@ -12,6 +12,7 @@ public class MoveFlag : MonoBehaviour
     LayerMask mask;
     void Start()
     {
+        this.transform.Rotate(new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-180.0f, 180.0f), Random.Range(-10.0f, 10.0f)));
         if (moveDown.y <= 0) {moveDown = new Vector3(0, .1f, 0);}
     }
 

@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float vInput;
     private float hInput;
 
+
     private Rigidbody rb;
     private Vector3 moveDir;
     private Vector3 poleOffset = new Vector3(0, 10, 0);

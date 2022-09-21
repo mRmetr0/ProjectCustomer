@@ -54,6 +54,7 @@ public class MineSpawner : MonoBehaviour
             }
             for (int ii = 0; ii < spawnAmount; ii++)
             {
+
                 spawnPos = new Vector3(Random.Range(startPos.transform.position.x, endPos.transform.position.x),
                         Random.Range(startPos.transform.position.y, endPos.transform.position.y),
                         Random.Range(startPos.transform.position.z, endPos.transform.position.z));
@@ -79,6 +80,7 @@ public class MineSpawner : MonoBehaviour
                         Instantiate(objects[i], hit.point, Quaternion.Euler(objects[i].transform.rotation.x, Random.Range(-180.0f, 180.0f), objects[i].transform.rotation.z), environmentManager.transform);
                     }
                 }
+
             }
         }
     }

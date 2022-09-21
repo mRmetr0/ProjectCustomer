@@ -10,8 +10,6 @@ public class MineScript : MonoBehaviour
     private float difuseDistance;
     [SerializeField][Tooltip("If player places flag in this radius, the mine goes off.")]
     private float deathDistance;
-    [SerializeField]
-    private float minDistance;
     
 
     private Vector3 defusePos;
@@ -34,7 +32,7 @@ public class MineScript : MonoBehaviour
     }
     void FlagableMine() {
         if (!handled) {
-            flatDistance = new Vector3( player.transform.position.x - transform.position.x, 0,  player.transform.position.z - transform.position.z);
+            flatDistance = new Vector2( player.transform.position.x - transform.position.x,  player.transform.position.z - transform.position.z);
             if (flatDistance.magnitude <= deathDistance) {      //Puts flag on mine and detonates;
                 GameManager.instance.GoToScene("EndScene");
             } else if (flatDistance.magnitude <= difuseDistance) {  //Close enough to diffuse the bomb:

@@ -47,8 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 10
   difuseDistance: 5
-  deathDistance: 5
-  minDistance: 0
+
+  deathDistance: 0.3
+
 --- !u!1001 &3178579163502873076
 PrefabInstance:
   m_ObjectHideFlags: 0

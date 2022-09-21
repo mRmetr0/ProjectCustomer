@@ -127,7 +127,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: eac678c9c3bd67f459c2fba35db74fd4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7a3c40c0f47fff74db51954e45f0a5e2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -320,6 +320,7 @@ Material:
     - _Normal_Strenght_2: 0
     - _Normal_Strenght_3: 0
     - _Normal_Strenght_4: 0
+    - _Normal_strength: 1
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
@@ -359,6 +360,7 @@ Material:
     - _TexWorldScale: 1
     - _TexWorldScaleEmissive: 1
     - _Thickness: 1
+    - _Tiling: 1
     - _TransmissionEnable: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2

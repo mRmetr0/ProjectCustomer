@@ -31,7 +31,7 @@ public class MineSpawner : MonoBehaviour
                 Debug.Log("ray");
                 if (hit.collider.tag == "ground")
                     Debug.Log("spawn");
-                Instantiate(mine, hit.point - new Vector3(0, Random.Range(0.4f, 0.7f), 0), Quaternion.identity, mineManager.transform);
+                Instantiate(mine, hit.point - new Vector3(0, Random.Range(0, 0.3f), 0), Quaternion.identity, mineManager.transform);
             }
         }
     }

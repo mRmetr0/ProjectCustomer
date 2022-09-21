@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: -6943191095806643328
     second: Substance_graph_basecolor.091|Substance_graph_basecolor.091Action
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_green_grass
+    second: {fileID: 2100000, guid: 7f4ab657cc712d24f90110bb61c24e41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: m_green_grass.001
+    second: {fileID: 2100000, guid: 7f4ab657cc712d24f90110bb61c24e41, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

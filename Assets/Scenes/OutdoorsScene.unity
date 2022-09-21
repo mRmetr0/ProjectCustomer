@@ -181,7 +181,7 @@ MonoBehaviour:
   maxMines: 10
   maxBushes: 5
   maxDryGrass: 7
-  maxGreenGrass: 100
+  maxGreenGrass: 1000
   maxRocks: 20
   maxTrees: 10
 --- !u!4 &1858082

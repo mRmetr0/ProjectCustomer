@@ -62,16 +62,21 @@ public class MineSpawner : MonoBehaviour
                 ray = new Ray(spawnPos, -transform.up);
                 if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                    Debug.Log("ray");
-                    if (hit.collider.tag == "ground")
-                        Debug.Log("spawn");
                     if (i == 0)
                     {
-                        Instantiate(objects[0], hit.point - new Vector3(0, Random.Range(0.4f, 0.7f), 0), Quaternion.identity, mineManager.transform);
+                        Instantiate(objects[0], hit.point - new Vector3(0, Random.Range(1f, 1.7f), 0), Quaternion.identity, mineManager.transform);
+                    }
+                    else if (i == 8 || i == 9 || i == 10 || i == 11 || i == 12)
+                    {
+                        Instantiate(objects[i], hit.point, Quaternion.Euler(90, Random.Range(-180.0f, 180.0f), 90), environmentManager.transform);
+                    }
+                    else if(i == 16)
+                    {
+                        Instantiate(objects[16], hit.point, Quaternion.Euler(88, Random.Range(-180.0f, 180.0f), objects[i].transform.rotation.z), environmentManager.transform);
                     }
                     else
                     {
-                        Instantiate(objects[i], hit.point, Quaternion.Euler(0, Random.Range(-180.0f, 180.0f), 0), environmentManager.transform);
+                        Instantiate(objects[i], hit.point, Quaternion.Euler(objects[i].transform.rotation.x, Random.Range(-180.0f, 180.0f), objects[i].transform.rotation.z), environmentManager.transform);
                     }
                 }
             }

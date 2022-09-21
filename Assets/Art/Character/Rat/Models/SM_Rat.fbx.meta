@@ -7,11 +7,11 @@ ModelImporter:
       74: 4781951162920444690
     second: Armature|ArmatureAction
   - first:
-      74: -8945691123924629249
-    second: Armature|Idle
+      74: -3100369314251171874
+    second: Idle
   - first:
-      74: 2667949614841947897
-    second: Walk
+      74: -9121621101649706817
+    second: Running
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -47,7 +47,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Idle
+      name: Idle
       takeName: Armature|ArmatureAction
       internalID: 0
       firstFrame: 0
@@ -58,7 +58,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -76,11 +76,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Walk
+      name: Running
       takeName: Armature|ArmatureAction
       internalID: 0
       firstFrame: 70
-      lastFrame: 100
+      lastFrame: 130
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

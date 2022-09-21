@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private GameObject polePos;
     [SerializeField]
     SoundManager sounds;
+    [SerializeField]
+    Animator playerAnims;
 
     private float vInput;
     private float hInput;
@@ -64,6 +66,17 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log(sounds.sfxClips[4]);
             sounds.sfxClips[4].Play();
+            playerAnims.SetBool("idle", false);
+            playerAnims.SetBool("run", true);
+        }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            playerAnims.SetBool("run", true);
+        }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            playerAnims.SetBool("run", false);
+            playerAnims.SetBool("idle", true);
         }
         if (Input.GetKeyUp(KeyCode.W))
         {

@@ -71,7 +71,7 @@ public class MineSpawner : MonoBehaviour
                     }
                     else
                     {
-                        Instantiate(objects[i], hit.point, Quaternion.identity, environmentManager.transform);
+                        Instantiate(objects[i], hit.point, Quaternion.Euler(0, Random.Range(-180.0f, 180.0f), 0), environmentManager.transform);
                     }
                 }
             }

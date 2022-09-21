@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2161.3838, g: 2265.3848, b: 3288.5703, a: 1}
+  m_IndirectSpecularColor: {r: 2164.5332, g: 2273.3984, b: 3313.4531, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,7 +167,8 @@ MonoBehaviour:
   - {fileID: 2596657009387412071, guid: cfaa0edd287167648a6d95ac4428217f, type: 3}
   - {fileID: 2282001259206476302, guid: 21f5778cb5eeafc4ca1f4133818c22c9, type: 3}
   - {fileID: 5749536249838773128, guid: d0b5837a1ee16344eb464500a4e9d5a0, type: 3}
-  - {fileID: 5176705162347020595, guid: 62b20407bc6a7d44bb7b11d61ac29fe0, type: 3}
+  - {fileID: 6847192294746096209, guid: 378b0b6d21dc1b343a30eb74a88ead32, type: 3}
+  - {fileID: 4851655463276463288, guid: a981f470aee92544b939ffb02d4a1716, type: 3}
   - {fileID: 6837655946462704707, guid: 8bc10a6d65137534488c14c6059b65f1, type: 3}
   - {fileID: 1698839740363274613, guid: 2211f4ab805395845bd5196c7e1a74e2, type: 3}
   - {fileID: 5497285592269615056, guid: bb2d99cdc365faa4ea73aed214cbb371, type: 3}
@@ -181,7 +182,7 @@ MonoBehaviour:
   maxMines: 10
   maxBushes: 5
   maxDryGrass: 7
-  maxGreenGrass: 1000
+  maxGreenGrass: 20
   maxRocks: 20
   maxTrees: 10
 --- !u!4 &1858082
@@ -1427,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2e9678263169c4d85c0729b769c893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  depth: 4
+  depth: 2
   width: 129
   height: 129
   scale: 7

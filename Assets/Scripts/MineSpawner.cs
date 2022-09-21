@@ -70,9 +70,9 @@ public class MineSpawner : MonoBehaviour
                     {
                         Instantiate(objects[i], hit.point, Quaternion.Euler(90, Random.Range(-180.0f, 180.0f), 90), environmentManager.transform);
                     }
-                    else if(i == 16)
+                    else if (i == 13 || i == 17)
                     {
-                        Instantiate(objects[16], hit.point, Quaternion.Euler(88, Random.Range(-180.0f, 180.0f), objects[i].transform.rotation.z), environmentManager.transform);
+                        Instantiate(objects[i], hit.point, Quaternion.Euler(88, Random.Range(-180.0f, 180.0f), objects[i].transform.rotation.z), environmentManager.transform);
                     }
                     else
                     {

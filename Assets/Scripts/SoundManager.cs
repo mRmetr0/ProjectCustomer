@@ -73,15 +73,6 @@ public class SoundManager : MonoBehaviour
         }
 
         Save();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            sfxClips[0].Play();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            sfxClips[1].Play();
-        }
     }
     private void Load()
     {

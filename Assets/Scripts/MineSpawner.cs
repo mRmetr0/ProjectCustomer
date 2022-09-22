@@ -80,7 +80,7 @@ public class MineSpawner : MonoBehaviour
                 {
                     if (i == 0)
                     {
-                        Instantiate(objects[0], hit.point - new Vector3(0, 0, 0), Quaternion.identity, mineManager.transform);
+                        Instantiate(objects[0], hit.point - new Vector3(0, Random.Range(0.3f,0), 0), Quaternion.identity, mineManager.transform);
                     }
                     else if (i == 8 || i == 9 || i == 10 || i == 11 || i == 12)
                     {

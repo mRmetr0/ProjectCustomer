@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d27635ae2168244958726d626897e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 10
-  difuseDistance: 5
-  deathDistance: 3
+  maxDistance: 8
+  difuseDistance: 6
+  deathDistance: 0.5
   minDistance: 0
   explosion: {fileID: 4476067452478248614, guid: 747279749d665224e8e8e0571c6bc77b,
     type: 3}

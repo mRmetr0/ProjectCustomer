@@ -6,6 +6,8 @@ public class MineSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject startPos;
     [SerializeField] private GameObject endPos;
+    [SerializeField] private GameObject startPosMine;
+    [SerializeField] private GameObject endPosMine;
     [SerializeField] private List<GameObject> objects;
     [SerializeField] private GameObject environmentManager;
     [SerializeField] private GameObject mineManager;
@@ -19,6 +21,7 @@ public class MineSpawner : MonoBehaviour
     [SerializeField] private int maxTrees;
 
     private int spawnAmount;
+    private bool mineSpawns = true;
 
     private Vector3 mineSize;
     private Vector3 spawnPos;
@@ -54,9 +57,18 @@ public class MineSpawner : MonoBehaviour
             }
             for (int ii = 0; ii < spawnAmount; ii++)
             {
-                spawnPos = new Vector3(Random.Range(startPos.transform.position.x, endPos.transform.position.x),
-                        Random.Range(startPos.transform.position.y, endPos.transform.position.y),
-                        Random.Range(startPos.transform.position.z, endPos.transform.position.z));
+                if (mineSpawns)
+                {
+                    spawnPos = new Vector3(Random.Range(startPosMine.transform.position.x, endPosMine.transform.position.x),
+                    Random.Range(startPosMine.transform.position.y, endPosMine.transform.position.y),
+                    Random.Range(startPosMine.transform.position.z, endPosMine.transform.position.z));
+                }
+                if(!mineSpawns)
+                {
+                    spawnPos = new Vector3(Random.Range(startPos.transform.position.x, endPos.transform.position.x),
+                    Random.Range(startPos.transform.position.y, endPos.transform.position.y),
+                    Random.Range(startPos.transform.position.z, endPos.transform.position.z));
+                }
                 Ray ray;
                 RaycastHit hit;
                 ray = new Ray(spawnPos, -transform.up);
@@ -65,6 +77,7 @@ public class MineSpawner : MonoBehaviour
                     if (i == 0)
                     {
                         Instantiate(objects[0], hit.point - new Vector3(0, Random.Range(1f, 1.7f), 0), Quaternion.identity, mineManager.transform);
+                        mineSpawns = false;
                     }
                     else if (i == 8 || i == 9 || i == 10 || i == 11 || i == 12)
                     {

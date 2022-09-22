@@ -12,7 +12,6 @@ public class MineScript : MonoBehaviour
     private float deathDistance;
     [SerializeField]
     private float minDistance;
-    
 
     private Vector3 defusePos;
     private PlayerMovement player;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6957918023614393169}
   - component: {fileID: 89423248}
+  - component: {fileID: 6127746785844223581}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -47,8 +48,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 10
   difuseDistance: 5
-  deathDistance: 5
+  deathDistance: 3
   minDistance: 0
+--- !u!65 &6127746785844223581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957918023614393168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.45, y: 0.18, z: 0.45}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3178579163502873076
 PrefabInstance:
   m_ObjectHideFlags: 0

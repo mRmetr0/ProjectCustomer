@@ -87,12 +87,12 @@ public class PlayerMovement : MonoBehaviour
     public void RandomSound()
     {
         int i = UnityEngine.Random.Range(0, 10000);
-        if(i <= 1)
+        if(i <= 7)
         {
             sounds.sfxClips[0].Play();
             Debug.Log(sounds.sfxClips[0]);
         }
-        if(i >= 1 && i <= 5)
+        if(i >= 7 && i <= 15)
         {
             sounds.sfxClips[5].Play();
             Debug.Log(sounds.sfxClips[5]);

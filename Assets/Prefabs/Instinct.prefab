@@ -46,14 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instinct: {fileID: 7806444859375305308}
-  spawnMod: 28
-  lengthMod: 10
+  spawnMod: 30
+  lengthMod: 20
   spawnMax: 25
   spawnMin: 1
-  lengthMax: 3
+  lengthMax: 1
   lengthMin: 0.2
-  maxSpawnAngle: 3
-  angleMod: 5
   radarHeight: 0.7
 --- !u!1 &5723789549273422306
 GameObject:

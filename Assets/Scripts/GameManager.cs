@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     private int difusedMines, maxMines, flagsPlaced = 0;
     public int difused {
         get{return difusedMines;}

@@ -62,6 +62,10 @@ public class MineSpawner : MonoBehaviour
                     spawnPos = new Vector3(Random.Range(startPosMine.transform.position.x, endPosMine.transform.position.x),
                     Random.Range(startPosMine.transform.position.y, endPosMine.transform.position.y),
                     Random.Range(startPosMine.transform.position.z, endPosMine.transform.position.z));
+                    if(i > 0)
+                    {
+                        mineSpawns = false;
+                    }
                 }
                 if(!mineSpawns)
                 {
@@ -76,8 +80,7 @@ public class MineSpawner : MonoBehaviour
                 {
                     if (i == 0)
                     {
-                        Instantiate(objects[0], hit.point - new Vector3(0, Random.Range(1f, 1.7f), 0), Quaternion.identity, mineManager.transform);
-                        mineSpawns = false;
+                        Instantiate(objects[0], hit.point - new Vector3(0, 0, 0), Quaternion.identity, mineManager.transform);
                     }
                     else if (i == 8 || i == 9 || i == 10 || i == 11 || i == 12)
                     {

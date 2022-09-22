@@ -10,6 +10,9 @@ public class MoveFlag : MonoBehaviour
 
     [SerializeField]
     LayerMask mask;
+
+    [SerializeField]
+    SoundManager sounds;
     void Start()
     {
         this.transform.Rotate(new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-180.0f, 180.0f), Random.Range(-10.0f, 10.0f)));
@@ -38,6 +41,7 @@ public class MoveFlag : MonoBehaviour
     bool FallCheck () {
         if (Physics.Raycast(gameObject.transform.position, Vector3.down, 0.7f, mask)) {
             Debug.Log("RayCast HIT!");
+            sounds.sfxClips[0].Play();
             Destroy(this);
             moveDown *= 0;
             return true;

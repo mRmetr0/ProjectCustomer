@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class TextScroll : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class TextScroll : MonoBehaviour
     private TextMeshProUGUI message;
     [SerializeField]
     private float alphaSpeed = 0.3f;
+    [SerializeField]
+    private Image image;
     private int progress = 0;
 
 
@@ -59,6 +62,12 @@ public class TextScroll : MonoBehaviour
                 canClick = true;
             }
 
+        }
+
+        if (image.color.a > 0) {
+            Color tempColor = image.color;
+            tempColor.a -= alphaSpeed;
+            image.color = tempColor;
         }
     }
 }

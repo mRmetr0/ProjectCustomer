@@ -35,7 +35,7 @@ public class MineScript : MonoBehaviour
         if (!handled) {
             flatDistance = new Vector3( player.transform.position.x - transform.position.x, 0,  player.transform.position.z - transform.position.z);
             if (flatDistance.magnitude <= deathDistance) {      //Puts flag on mine and detonates;
-                GameManager.instance.GoToScene("EndScene");
+                GameManager.instance.GoToScene("EndScrollScene");
             } else if (flatDistance.magnitude <= difuseDistance) {  //Close enough to diffuse the bomb:
                 handled = true;
                 GameManager.instance.difused++;

@@ -52,7 +52,7 @@ public class HUDManager : MonoBehaviour
             int displaySec = Mathf.Clamp((int) startTime - 60*displayMin, 0, 60);
             mainTextDisplay.text = displayMin.ToString() +":"+ (displaySec < 10 ? "0"+ displaySec.ToString() : displaySec.ToString());
         } else {
-            GameManager.instance.GoToScene("EndScene");
+            GameManager.instance.GoToScene("EndScrollScene");
         }
     }
 

@@ -20,6 +20,7 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
     }
     public void StartButton () {
         SceneManager.LoadScene(1);
+        GameManager.instance.difused = 0;
     }
     public void ExitButton () {
         Application.Quit();

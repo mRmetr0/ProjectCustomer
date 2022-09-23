@@ -40,6 +40,10 @@ public class TextScroll : MonoBehaviour
         if (time <= 0)
         {
             time = -time;
+            if(GameManager.instance.difused == 1)
+            {
+                GameManager.instance.difused = 0;
+            }
         }
         messages = new string [] {
             "You’ve helped to clear "+GameManager.instance.difused.ToString()+" Landmines during your run.", 
@@ -82,6 +86,10 @@ public class TextScroll : MonoBehaviour
             Color tempColor = image.color;
             tempColor.a -= alphaSpeed;
             image.color = tempColor;
+        }
+        else
+        {
+            image.enabled = false;
         }
     }
 }

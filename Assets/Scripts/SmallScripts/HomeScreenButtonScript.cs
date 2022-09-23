@@ -21,6 +21,7 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
         pb = GetComponent<Button>();
     }
     public void PlayButton () {
+        GameManager.instance.difused = 0;
         SceneManager.LoadScene("Manual");
     }
     public void StartButton()

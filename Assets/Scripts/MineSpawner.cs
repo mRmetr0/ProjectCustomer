@@ -13,7 +13,7 @@ public class MineSpawner : MonoBehaviour
     [SerializeField] private GameObject mineManager;
     [SerializeField] private LayerMask groundMask;
     [Space]
-    [SerializeField] private int maxMines;
+    [SerializeField] public int maxMines;
     [SerializeField] private int maxBushes;
     [SerializeField] private int maxDryGrass;
     [SerializeField] private int maxGreenGrass;

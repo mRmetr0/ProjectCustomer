@@ -20,4 +20,8 @@ public class SettingsButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void BackButtonEndGame()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
 }

@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     SoundManager sounds;
     [SerializeField]
     Animator playerAnims;
+    [SerializeField]
+    GameManager gameManager;
 
     private float vInput;
     private float hInput;
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        gameManager.flagsPlaced = 0;
         HUD = FindObjectOfType<HUDManager>();
         camOrientation = FindObjectOfType<CameraController>();
         rb = GetComponent<Rigidbody>();

@@ -9,6 +9,10 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
 {
     [SerializeField]
     private GameObject settingsOverlay;
+    [SerializeField]
+    GameObject manualOverlay;
+    [SerializeField]
+    GameManager gameManager;
 
     private Button pb;
     public Sprite newSprite;
@@ -33,6 +37,7 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
     }
     public void BackButton()
     {
+        gameManager.flagsPlaced = 0;
         SceneManager.LoadScene(0);
     }
     public void BackButtonInGame()
@@ -40,7 +45,14 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
         settingsOverlay.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
-
+    public void InfoButton()
+    {
+        manualOverlay.SetActive(true);
+    }
+    public void ManualOverlay()
+    {
+        manualOverlay.SetActive(false);
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         pb.image.sprite = newSprite;

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    private int difusedMines, maxMines, flagsPlaced = 0;
+    public int difusedMines, maxMines, flagsPlaced = 0;
     public int difused {
         get{return difusedMines;}
         set{difusedMines = value;}

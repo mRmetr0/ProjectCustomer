@@ -48,10 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 8
   difuseDistance: 6
-  deathDistance: 0.5
+  deathDistance: 2
   minDistance: 0
-  explosion: {fileID: 4476067452478248614, guid: 747279749d665224e8e8e0571c6bc77b,
-    type: 3}
 --- !u!65 &6127746785844223581
 BoxCollider:
   m_ObjectHideFlags: 0

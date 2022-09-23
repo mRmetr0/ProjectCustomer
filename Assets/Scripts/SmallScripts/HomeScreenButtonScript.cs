@@ -20,9 +20,12 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
         Cursor.lockState = CursorLockMode.None;
         pb = GetComponent<Button>();
     }
-    public void StartButton () {
+    public void PlayButton () {
+        SceneManager.LoadScene("Manual");
+    }
+    public void StartButton()
+    {
         SceneManager.LoadScene(1);
-        GameManager.instance.difused = 0;
     }
     public void ExitButton () {
         Application.Quit();

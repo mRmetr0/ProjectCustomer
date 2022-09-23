@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScrollScene.unity
     guid: 4534b3ae2fe6d7b418a0ede13e473095
+  - enabled: 1
+    path: Assets/Scenes/Manual.unity
+    guid: b59afc5dedfd7794a89269633be042e1
   m_configObjects: {}

@@ -67,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
         RandomSound();
         if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
-            Debug.Log(sounds.sfxClips[4]);
             sounds.sfxClips[4].Play();
             playerAnims.SetBool("idle", false);
             playerAnims.SetBool("run", true);
@@ -83,7 +82,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.W))
         {
-            Debug.Log(sounds.sfxClips[4] + "stop");
             sounds.sfxClips[4].Stop();
         }
     }
@@ -93,12 +91,10 @@ public class PlayerMovement : MonoBehaviour
         if(i <= 7)
         {
             sounds.sfxClips[0].Play();
-            Debug.Log(sounds.sfxClips[0]);
         }
         if(i >= 7 && i <= 15)
         {
             sounds.sfxClips[5].Play();
-            Debug.Log(sounds.sfxClips[5]);
         }
     }
     private void FixedUpdate()

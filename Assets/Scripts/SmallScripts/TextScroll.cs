@@ -63,7 +63,6 @@ public class TextScroll : MonoBehaviour
             alphaUp = false;
         }
 
-        Debug.Log(message.alpha);
         if (!canClick) {
             message.alpha += (alphaUp? 1 : -1) * alphaSpeed * Time.deltaTime;
             message.alpha = Mathf.Clamp(message.alpha, 0, 1);

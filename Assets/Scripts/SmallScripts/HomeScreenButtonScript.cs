@@ -11,8 +11,6 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
     private GameObject settingsOverlay;
     [SerializeField]
     GameObject manualOverlay;
-    [SerializeField]
-    GameManager gameManager;
 
     private Button pb;
     public Sprite newSprite;
@@ -37,7 +35,6 @@ public class HomeScreenButtonScript : MonoBehaviour, IPointerExitHandler, IPoint
     }
     public void BackButton()
     {
-        gameManager.flagsPlaced = 0;
         SceneManager.LoadScene(0);
     }
     public void BackButtonInGame()

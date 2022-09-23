@@ -34,11 +34,6 @@ public class HUDManager : MonoBehaviour
     private void Update()
     {
         HUDTimer();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            settingsOverlay.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-        }
 
         //Something to set toFade to true which will lead into the screen to fade and ultimetally go to the endscene;
         if (toFade) {

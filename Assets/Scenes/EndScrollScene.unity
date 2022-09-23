@@ -426,7 +426,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1453210738}
         m_TargetAssemblyTypeName: SettingsButtonScript, Assembly-CSharp
-        m_MethodName: BackButtonEndGame
+        m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -773,6 +773,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3ed7a7b4b68a34f9e15fad5451ecb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difusedMines: 0
+  maxMines: 0
+  flagsPlaced: 0
 --- !u!1 &923998200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1185,6 @@ MonoBehaviour:
   image: {fileID: 984185805}
   explosion: {fileID: 1974109543}
   bgNoise: {fileID: 2081633660}
-  mineAmount: {fileID: 0}
 --- !u!114 &1453210738
 MonoBehaviour:
   m_ObjectHideFlags: 0
